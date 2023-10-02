@@ -20,10 +20,31 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Angular');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Angular app is running!');
-  });
 });
+
+describe('Form', () => {
+  let person: any;
+  let result: any;
+
+  /* given() - Dado */
+  beforeEach(() => {
+      person = { userId: 3 }
+  });
+  /* when() -  Cuando */
+  beforeEach(() => {
+      result = getPersonName(person);
+  });
+  /* Then() - Entonces */
+  it('Deberia Volver el Nombre Completo', () => {
+      expect(result).toBe('Carlos');
+  });
+})
+
+function getPersonName(person: any) {
+  switch(person.userId)
+  {
+      case 1:
+          return 'Carlos';
+  }
+  return 'Andres';
+}

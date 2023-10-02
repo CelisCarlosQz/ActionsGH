@@ -8,11 +8,11 @@ jobs:
     # Machine environment:
     # https://help.github.com/en/articles/software-in-virtual-environments-for-github-actions#ubuntu-1804-lts
     # We specify the Node.js version manually below, and use versioned Chrome from Puppeteer.
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js 12.8
+    - name: Use Node.js 16.20
       uses: actions/setup-node@v1
       with:
         node-version: 12.8
